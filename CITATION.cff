@@ -9,6 +9,7 @@ authors:
     affiliation: "Lund Observatory, Lund University"
 version: 1.0.0
 date-released: 2026-11-10
+doi: 10.5281/zenodo.24101622
 license: GPL-3.0-or-later
 keywords:
   - astrometry

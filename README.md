@@ -9,7 +9,9 @@ the projection of the single-star fit that produced them. One likelihood can
 be sampled with five samplers. It was written for the Gaia DR4 epoch
 astrometry and validated on the DR4 pre-release sources.
 
-**Version 1.0.0.** A paper describing the code is in preparation.
+**Version 1.0.0**, archived at Zenodo:
+[doi:10.5281/zenodo.24101622](https://doi.org/10.5281/zenodo.24101622).
+A paper describing the code is in preparation.
 
 ## What it does
 
@@ -175,9 +177,12 @@ troubleshooting and the limitations of the code.
 
 ## Citing
 
-See `CITATION.cff`. Please also cite the samplers you use (emcee, eryn,
-dynesty, nessai) and, for Gaia data, follow the Gaia acknowledgement
-instructions.
+Cite the archived version you used: version 1.0.0 is
+[doi:10.5281/zenodo.24101622](https://doi.org/10.5281/zenodo.24101622), and
+[doi:10.5281/zenodo.24101621](https://doi.org/10.5281/zenodo.24101621) always
+resolves to the latest version. `CITATION.cff` gives the full entry.
+Please also cite the samplers you use (emcee, eryn, dynesty, nessai) and, for
+Gaia data, follow the Gaia acknowledgement instructions.
 
 ## Licence
 
