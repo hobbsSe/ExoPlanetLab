@@ -1,0 +1,13 @@
+# Scan-angle harmonics. Quiet geometry 4181040337841125632,
+# Student-t (nu = 3) noise. Collect with:  python3 Tools/evidence_ladder.py HARM
+# A. A pure scan-angle signal (no orbit, INJECT_A0=0) of 0.05 mas in cos/sin(2 psi):
+#    does the orbit fit find a spurious orbit, and do the harmonic models win?
+HARM-SPUR-H0-N1      SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4181040337841125632 RV_MODE=none SOLVER=emcee ORIENT_PRIOR=isotropic ASTRO_NOISE=student INJECT=1000,0.2,0.5,60,30,90 INJECT_A0=0 INJECT_SEED=1 INJECT_NOISE_NU=3 INJECT_HARM=0.04,-0.03 EVIDENCE=1 N_FIT=1
+HARM-SPUR-H2-N1      SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4181040337841125632 RV_MODE=none SOLVER=emcee ORIENT_PRIOR=isotropic ASTRO_NOISE=student INJECT=1000,0.2,0.5,60,30,90 INJECT_A0=0 INJECT_SEED=1 INJECT_NOISE_NU=3 INJECT_HARM=0.04,-0.03 EVIDENCE=1 N_FIT=1 ASTRO_HARM=2
+# B. A real orbit (P 300 d, S = 15) without a scan-angle signal, fitted with the
+#    harmonic terms: the orbit must keep its evidence (cost ~1).
+HARM-ORB-H2-N1       SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4181040337841125632 RV_MODE=none SOLVER=emcee ORIENT_PRIOR=isotropic PT_ASTRO=1 ASTRO_NOISE=student INJECT=300,0.3,0.4,60,30,90 INJECT_SNR=15 INJECT_SEED=1 INJECT_NOISE_NU=3 EVIDENCE=1 N_FIT=1 ASTRO_HARM=2
+# C. The DR4 companions with the harmonic terms (against the EV-*-N1 runs).
+EVH2-Gaia-4-N1       SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=1457486023639239296 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1 ASTRO_HARM=23
+EVH2-Gaia-BH3-N1     SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1 ASTRO_HARM=23
+EVH2-HD-114762-N1    SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1 ASTRO_HARM=23

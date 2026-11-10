@@ -1,0 +1,7 @@
+# The three joint astrometry + RV fits of the DR4 pre-release companions, with
+# the (omega, Omega) convention of orbit.omega_from_ti (Omega in [0, 180) deg),
+# which sets the sign of K. Same settings as in Tools/jobs_accel.txt.
+# Run with:  python3 Tools/run_batch.py Tools/jobs_rv_rerun.txt --max-parallel 3
+EVRV-Gaia-4-N1          SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=1457486023639239296 RV_MODE=external SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1 ASTRO_ACCEL=0
+EVRV-Gaia-BH3-N1        SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=external SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1 ASTRO_ACCEL=0
+EVRV-HD-114762-N1       SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=external SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1 ASTRO_ACCEL=0

@@ -1,0 +1,7 @@
+# The three two-orbit fits that mixed period modes, repeated with the
+# ranked starts for N >= 2 (beam search over periodogram peaks).
+# Same data as MP-<case>-N2. Collect:  python3 Tools/evidence_ladder.py MPB
+# Run with:  python3 Tools/run_batch.py Tools/jobs_b7_beam.txt --max-parallel 3
+MPB-P390-S10-s1-N2      SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4181040337841125632 RV_MODE=none SOLVER=emcee ORIENT_PRIOR=isotropic PT_ASTRO=1 ASTRO_NOISE=student INJECT=300,0.3,0.4,60,30,90 INJECT_SNR=15 INJECT_NOISE_NU=3 EVIDENCE=1 N_FIT=2 INJECT_SEED=1 INJECT_OUTER=390,0.2,0.3,50,120,40,0.09209 SEED=406
+MPB-P390-S15-s1-N2      SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4181040337841125632 RV_MODE=none SOLVER=emcee ORIENT_PRIOR=isotropic PT_ASTRO=1 ASTRO_NOISE=student INJECT=300,0.3,0.4,60,30,90 INJECT_SNR=15 INJECT_NOISE_NU=3 EVIDENCE=1 N_FIT=2 INJECT_SEED=1 INJECT_OUTER=390,0.2,0.3,50,120,40,0.13814 SEED=410
+MPB-P600-S10-s1-N2      SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4181040337841125632 RV_MODE=none SOLVER=emcee ORIENT_PRIOR=isotropic PT_ASTRO=1 ASTRO_NOISE=student INJECT=300,0.3,0.4,60,30,90 INJECT_SNR=15 INJECT_NOISE_NU=3 EVIDENCE=1 N_FIT=2 INJECT_SEED=1 INJECT_OUTER=600,0.2,0.3,50,120,40,0.07253 SEED=418

@@ -1,0 +1,86 @@
+# HD 114762 (source_id 3937211745905473024) radial velocities
+# Source: California Legacy Survey (Rosenthal et al. 2021, ApJS 255, 8)
+#   github.com/leerosenthalj/CLSI legacy_tables/legacy_data.csv, name=114762
+#   Keck-HIRES ('j') and Lick-Hamilton ('lick') differential velocities
+# TIME_REF_JD = 2457936.875
+# Columns: time(d) [= JD - 2457936.875 (J2017.5, TCB) -- CORRECTED
+#          2026-09-19: confirmed this is what gaia_dr4_epoch.py's t_obs_day is
+#          actually relative to (gaiasupdate.constants.DR4_REFERENCE_EPOCH), NOT
+#          ExoPlanetLab's old T0_JD=2457388.5 (2016-01-01 00:00 UTC, ~J2016.0; only for SOURCE_MODE=
+#          'gaia'). Every time(d) value below was shifted by -548.375 days from
+#          the original (wrong) BJD-2457388.5 convention. This matters: t_rv and
+#          t_obs share the same fitted T0 in the joint likelihood, so a mismatched
+#          zero-point here silently corrupts the RV orbital phase in every joint
+#          fit, not just KNOWN_TRUTH comparisons -- see gaia_dr4_epoch.py's
+#          DR4_EPOCH_REF_JD comment for the full story.],
+#          rv(m/s), rv_err(m/s), instrument
+# Original discovery (Latham et al. 1989) not included here -- pre-HIRES data not in this public release
+# Host star mass (Kiefer et al. 2019, A&A 632, L9: F9 subgiant, M* = 1.046 +/-
+# 0.040 Msun) and Gaia DR3 parallax (26.1979 +/- 0.1082 mas; the RAW catalogue
+# value, NO zero-point correction -- Lindegren+2021 gives Z = -0.0370 mas, i.e.
+# 26.2348; RUWE 3.16). Auto-read by
+# ExoPlanetLab.py's RV loader into M_STAR_MSUN/SIGMA and PARALLAX_MAS/SIGMA
+# when those are left at their None default.
+# M_STAR_MSUN = 1.046
+# M_STAR_SIGMA = 0.040
+# PARALLAX_MAS = 26.1979
+# PARALLAX_SIGMA = 0.1082
+-9971.911100,-185.785,22.282,lick
+-9919.041100,315.116,20.412,lick
+-9918.034800,277.923,17.401,lick
+-9917.044500,289.411,27.198,lick
+-9561.022200,-600.955,14.630,lick
+-9499.137000,262.906,19.815,lick
+-9287.783900,465.417,17.253,lick
+-9265.901968,569.495,21.001,lick
+-8868.054300,452.165,25.783,lick
+-8868.032500,505.417,30.657,lick
+-8840.060600,518.847,27.312,lick
+-8840.039100,532.713,28.769,lick
+-8822.098300,76.314,21.166,lick
+-8762.169700,573.388,14.704,lick
+-8586.867000,476.456,17.355,lick
+-8561.863500,-296.950,17.900,lick
+-8472.088800,-636.280,25.345,lick
+-8467.093800,-554.157,16.029,lick
+-8055.156250,-445.897,9.604,lick
+-8023.119141,585.089,9.804,lick
+-8022.199219,608.460,9.314,lick
+-7791.934570,-335.551,11.584,lick
+-7755.055664,583.340,14.874,lick
+-7431.914062,623.542,17.038,lick
+-6308.024414,197.238,13.889,lick
+-5903.010742,521.200,10.928,lick
+-5103.159180,-71.095,9.785,lick
+-4867.899414,-392.179,14.661,lick
+-4804.052734,373.237,10.719,lick
+-4547.831667,270.107,12.560,lick
+-4392.151493,501.862,10.646,lick
+-4391.129630,494.241,10.293,lick
+-3770.929282,-625.595,11.297,lick
+-3388.919109,527.266,10.383,lick
+-3071.831782,576.887,13.828,lick
+-1295.721911,308.038,1.699,j
+-1053.139906,325.600,2.130,j
+-729.137364,171.493,1.558,j
+-727.136444,220.636,1.549,j
+-726.137205,238.939,1.517,j
+-723.137356,287.773,1.755,j
+-721.137823,311.865,1.763,j
+-707.132405,299.707,1.696,j
+-671.162022,-715.592,1.636,j
+-524.686477,96.509,1.660,j
+-315.156116,-50.549,1.855,j
+2.879677,-838.492,1.586,j
+62.837844,96.017,1.739,j
+65.846033,23.092,1.816,j
+214.220180,313.928,1.795,j
+224.259181,204.903,1.959,j
+330.088020,-423.078,1.825,j
+362.863715,197.959,1.406,j
+399.851934,61.931,1.615,j
+400.852878,43.009,1.710,j
+407.848973,-165.116,1.959,j
+427.839799,-875.262,1.904,j
+572.170015,-55.878,1.721,j
+742.862204,-145.453,1.535,j

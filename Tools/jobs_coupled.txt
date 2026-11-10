@@ -1,0 +1,7 @@
+# The three DR4 companions with K tied to the astrometric orbit
+# (EXOPLANETLAB_RV_COUPLED=1); otherwise the joint reference runs of
+# jobs_reference.txt. To compare with the reweighting of those runs
+# (Tools/coupled_k.py -> Results/coupled_k.txt).
+CPL-Gaia-BH3-RV      SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=external SOLVER=emcee ASTRO_NOISE=student RV_COUPLED=1
+CPL-Gaia-4-RV        SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=1457486023639239296 RV_MODE=external SOLVER=emcee ASTRO_NOISE=student RV_COUPLED=1
+CPL-HD-114762-RV     SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=external SOLVER=emcee ASTRO_NOISE=student RV_COUPLED=1

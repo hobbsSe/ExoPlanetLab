@@ -1,0 +1,10 @@
+# Nested-sampling evidence on the normalised prior (NESTED_EVIDENCE):
+# HD 114762 astrometry only, N = 1 (check against the tempered ln Z(1) = 113.8-114.7)
+# and N = 2 (the tempered run did not converge; its posterior sets the N = 2 box,
+# since the short emcee box-source fit is unreliable there). Isotropic orientation
+# prior; T0 sampled as the orbital phase.
+# Collect with:  python3 Tools/evidence_ladder.py EVDY  /  EVNS
+EVDY-HD-114762-N1   SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=none SOLVER=dynesty ASTRO_NOISE=student EVIDENCE=1 N_FIT=1
+EVDY-HD-114762-N2   SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=none SOLVER=dynesty ASTRO_NOISE=student EVIDENCE=1 N_FIT=2 DYNESTY_BOX_SOURCE=file:Results/2plt_emcee_20261003_084440-EV-HD-114762-N2/posterior_samples.npz
+EVNS-HD-114762-N1   SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=none SOLVER=nessai NESSAI_JOINT_USE_EMCEE=0 ASTRO_NOISE=student EVIDENCE=1 N_FIT=1
+EVNS-HD-114762-N2   SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=none SOLVER=nessai NESSAI_JOINT_USE_EMCEE=0 ASTRO_NOISE=student EVIDENCE=1 N_FIT=2 DYNESTY_BOX_SOURCE=file:Results/2plt_emcee_20261003_084440-EV-HD-114762-N2/posterior_samples.npz

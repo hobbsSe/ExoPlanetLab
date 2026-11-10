@@ -1,0 +1,49 @@
+# Gaia-4 (source_id 1457486023639239296) radial velocities
+# Source: Stefansson et al. 2025, AJ 169, 107 (doi:10.3847/1538-3881/ada9e1)
+#   VizieR J/AJ/169/107/table5 -- HPF, NEID, FIES
+# TIME_REF_JD = 2457936.875
+# Columns: time(d) [= BJD_TDB - 2457936.875 (J2017.5, TCB) -- CORRECTED
+#          2026-09-19: confirmed this is what gaia_dr4_epoch.py's t_obs_day is
+#          actually relative to (gaiasupdate.constants.DR4_REFERENCE_EPOCH), NOT
+#          ExoPlanetLab's old T0_JD=2457388.5 (2016-01-01 00:00 UTC, ~J2016.0; only for SOURCE_MODE=
+#          'gaia'). Every time(d) value below was shifted by -548.375 days from
+#          the original (wrong) BJD-2457388.5 convention. This matters: t_rv and
+#          t_obs share the same fitted T0 in the joint likelihood, so a mismatched
+#          zero-point here silently corrupts the RV orbital phase in every joint
+#          fit, not just KNOWN_TRUTH comparisons -- see gaia_dr4_epoch.py's
+#          DR4_EPOCH_REF_JD comment for the full story.],
+#          rv(m/s), rv_err(m/s), instrument
+# Host star mass and parallax (parallax is Stefansson's adopted value; for reference
+# raw DR3 = 13.5448, Lindegren+2021 zero-point Z = -0.0227 -> 13.5675; RUWE 1.50)
+# (Stefansson et al. 2025, Table 1: M* = 0.644
+# +0.025/-0.023 Msun, parallax = 13.628 +0.021/-0.020 mas -- sigma below is
+# the average of the asymmetric errors, for the Gaussian prior ExoPlanetLab
+# uses). Auto-read by ExoPlanetLab.py's RV loader into M_STAR_MSUN/SIGMA and
+# PARALLAX_MAS/SIGMA when those are left at their None default.
+# M_STAR_MSUN = 0.644
+# M_STAR_SIGMA = 0.024
+# PARALLAX_MAS = 13.628
+# PARALLAX_SIGMA = 0.0205
+2102.832428,174.40,22.70,HPF
+2139.548770,222.00,11.30,FIES
+2183.870063,-36.50,14.10,HPF
+2211.773947,-136.40,11.20,HPF
+2224.746481,-196.90,26.40,HPF
+2337.889694,-329.00,12.30,FIES
+2338.888224,-325.80,13.70,FIES
+2341.125150,-392.80,7.40,NEID
+2355.153558,-357.50,16.50,HPF
+2358.171997,-344.80,6.80,NEID
+2373.096096,-261.00,5.80,NEID
+2387.040039,-157.70,10.80,NEID
+2402.849544,-8.30,12.80,FIES
+2422.987195,4.60,16.20,HPF
+2428.952808,-9.00,15.60,HPF
+2434.952772,7.20,16.90,HPF
+2463.674350,205.30,11.90,FIES
+2554.896605,210.60,10.80,NEID
+2562.830697,181.30,9.20,NEID
+2580.767454,150.00,11.00,HPF
+2585.742242,197.30,12.50,HPF
+2620.766766,157.70,7.00,NEID
+2624.775529,197.50,13.40,NEID

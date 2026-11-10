@@ -1,0 +1,55 @@
+# Gaia BH3 luminous companion (source_id 4318465066420528000) radial velocities
+# Source: Gaia Collaboration et al. 2024, A&A 686, L2 (doi:10.1051/0004-6361/202449763)
+#   Table B.2 (Gaia RVS epoch RVs, BJD TCB) + Table C.1 (ground-based: UVES/HERMES/SOPHIE, BJD UTC)
+#   Transcribed from the published PDF tables; VERIFIED 2026-09-21 row by row against Tables B.2 (17 RVS epochs)
+#   and C.1 (4 ground-based) -- all 21 rows match (times, RVs, errors). Not included, deliberately: the DR3
+#   catalogue RV in the paper's Table 1 (-333.2 +/- 3.4 km/s) -- see the note below.
+# NOTE (Table 1 RV): that value is the median of the Gaia RVS epochs before the DR3 cut-off (the first 10 rows
+#   here: median -333.1, scatter/sqrt(N) = 4.0 km/s), i.e. a time-average of measurements already listed below,
+#   over an interval in which the RV changes by ~35 km/s. It has no epoch and is not independent, so adding it
+#   would double count and mis-weight; it is not a data point for the Keplerian fit.
+# TIME_REF_JD = 2457936.875
+# Columns: time(d) [= BJD - 2457936.875 (J2017.5, TCB) -- CORRECTED
+#          2026-09-19: confirmed this is what gaia_dr4_epoch.py's t_obs_day is
+#          actually relative to (gaiasupdate.constants.DR4_REFERENCE_EPOCH), NOT
+#          ExoPlanetLab's old T0_JD=2457388.5 (2016-01-01 00:00 UTC, ~J2016.0; only for SOURCE_MODE=
+#          'gaia'). Every time(d) value below was shifted by -548.375 days from
+#          the original (wrong) BJD-2457388.5 convention. This matters: t_rv and
+#          t_obs share the same fitted T0 in the joint likelihood, so a mismatched
+#          zero-point here silently corrupts the RV orbital phase in every joint
+#          fit, not just KNOWN_TRUTH comparisons -- see gaia_dr4_epoch.py's
+#          DR4_EPOCH_REF_JD comment for the full story.],
+#          rv(m/s), rv_err(m/s), instrument
+# NOTE: these are ABSOLUTE barycentric RVs (~-290 to -405 km/s), not zero-centered relative velocities
+#   like the other two targets -- see caveats before using with RV_MODE='external' as-is.
+# Luminous-component mass and Gaia DR3 parallax (Gaia Collaboration et al.
+# 2024, Table 1 & Sect. 4: M* = 0.76 +/- 0.05 Msun, parallax = 1.679 +/-
+# 0.069 mas). The parallax is the DR3 catalogue value WITH the Lindegren+2021
+# zero-point applied (raw DR3 1.6443; Z = -0.0354 mas, reproduced 2026-09-21;
+# Table 1 note b). Auto-read by ExoPlanetLab.py's RV loader into M_STAR_MSUN/
+# SIGMA and PARALLAX_MAS/SIGMA when those are left at their None default.
+# M_STAR_MSUN = 0.76
+# M_STAR_SIGMA = 0.05
+# PARALLAX_MAS = 1.679
+# PARALLAX_SIGMA = 0.069
+-926.778834,-338620.0,1420.0,RVS
+-926.704831,-341080.0,1700.0,RVS
+-844.018351,-338730.0,1410.0,RVS
+-843.944340,-340630.0,1430.0,RVS
+-806.783797,-335280.0,2200.0,RVS
+-655.366202,-330880.0,1240.0,RVS
+-389.697622,-320110.0,1610.0,RVS
+-256.152798,-319090.0,1870.0,RVS
+-226.667882,-315110.0,1120.0,RVS
+-109.120332,-305820.0,1530.0,RVS
+123.267534,-290290.0,1420.0,RVS
+149.187277,-294930.0,1530.0,RVS
+149.261278,-294670.0,1750.0,RVS
+471.575948,-404700.0,1140.0,RVS
+676.959346,-399650.0,1210.0,RVS
+696.785613,-398970.0,1100.0,RVS
+863.721176,-393590.0,2000.0,RVS
+1221.658300,-383200.0,300.0,UVES
+2206.619800,-364050.0,200.0,HERMES
+2255.560900,-363150.0,20.0,SOPHIE
+2256.608300,-363240.0,200.0,HERMES

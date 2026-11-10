@@ -1,0 +1,8 @@
+# ln Z run-to-run scatter: the same job five times.
+# The samplers are not seeded for DR4 data, so every run is an independent repeat.
+# Collect with:  python3 Tools/evidence_ladder.py EVS
+EVS-HD-114762-r1-N1     SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1
+EVS-HD-114762-r2-N1     SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1
+EVS-HD-114762-r3-N1     SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1
+EVS-HD-114762-r4-N1     SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1
+EVS-HD-114762-r5-N1     SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1

@@ -1,0 +1,52 @@
+# Reference runs, for run_batch.py: one job
+# per line, a name then KEY=VALUE settings (EXOPLANETLAB_* variables, prefix
+# optional); '#' starts a comment. Anything not set here takes the defaults in
+# ExoPlanetLab.py (isotropic orientation prior for emcee/nessai, tempered joint
+# fit, 100 tau stop, Student-t noise for epoch data, orbit-corrected
+# parallax for masses) -- so SOURCE_MODE is always set explicitly, in case the
+# default in the script has been edited.
+#
+#   python3 Tools/run_batch.py Tools/jobs_reference.txt --dry-run
+#   python3 Tools/run_batch.py Tools/jobs_reference.txt
+#
+# 19 jobs, longest first so that the batch packs well on 9 cores.
+# The astrometric noise model is set in every job: Student-t for the DR4
+# sources (the default for epoch data), Gaussian for the simulated benchmark
+# and the jitter validation (whose point is the jitter). Only the DR4 jobs:
+#   python3 Tools/run_batch.py Tools/jobs_reference.txt --only '^(Gaia|HD)'
+
+# -- Simulated two-planet benchmark, astrometry only ----------------------------
+# (the RJ solvers take ~27 min; dynesty and the RJ solvers use the uniform
+#  Thiele-Innes prior, which their prior transforms assume)
+Ref-NoRV4    SOURCE_MODE=simulated  RV_MODE=none       SOLVER=rjmcmc ASTRO_NOISE=gauss
+Ref-NoRV5    SOURCE_MODE=simulated  RV_MODE=none       SOLVER=rjflow ASTRO_NOISE=gauss
+
+# -- DR4 pre-release sources with published orbits -----------------------------
+Gaia-BH3-RV      SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=external SOLVER=emcee ASTRO_NOISE=student
+Gaia-4-RV        SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=1457486023639239296 RV_MODE=external SOLVER=emcee ASTRO_NOISE=student
+HD-114762-RV     SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=external SOLVER=emcee ASTRO_NOISE=student
+
+# -- Solver cross-check on Gaia BH3 + RV ---------------------------------------
+Gaia-BH3-RV-dynesty  SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=external SOLVER=dynesty ASTRO_NOISE=student
+Gaia-BH3-RV-nessai   SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=external SOLVER=nessai ASTRO_NOISE=student
+
+# -- Simulated benchmark with simulated RV ------------------------------------
+Ref-RV1      SOURCE_MODE=simulated  RV_MODE=simulated  SOLVER=emcee ASTRO_NOISE=gauss
+Ref-RV2      SOURCE_MODE=simulated  RV_MODE=simulated  SOLVER=nessai ASTRO_NOISE=gauss
+Ref-RV3      SOURCE_MODE=simulated  RV_MODE=simulated  SOLVER=dynesty ASTRO_NOISE=gauss
+
+# -- Astrometric-jitter validation: benchmark + RV with extra white noise in the
+#    astrometry but not in its quoted errors -------------------------------------
+Ref-RV-aj0.0mas     SOURCE_MODE=simulated  RV_MODE=simulated ASTRO_JITTER=1 SIM_EXTRA_NOISE=0.00 SOLVER=emcee ASTRO_NOISE=gauss
+Ref-RV-aj0.1mas     SOURCE_MODE=simulated  RV_MODE=simulated ASTRO_JITTER=1 SIM_EXTRA_NOISE=0.10 SOLVER=emcee ASTRO_NOISE=gauss
+Ref-RV-aj0.3mas     SOURCE_MODE=simulated  RV_MODE=simulated ASTRO_JITTER=1 SIM_EXTRA_NOISE=0.30 SOLVER=emcee ASTRO_NOISE=gauss
+
+# -- DR4 sources, astrometry only ---------------------------------------------
+Gaia-BH3-NoRV    SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student
+Gaia-4-NoRV      SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=1457486023639239296 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student
+HD-114762-NoRV   SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student
+
+# -- Simulated benchmark, astrometry only, fixed-N solvers --------------------
+Ref-NoRV1    SOURCE_MODE=simulated  RV_MODE=none       SOLVER=emcee ASTRO_NOISE=gauss
+Ref-NoRV2    SOURCE_MODE=simulated  RV_MODE=none       SOLVER=nessai ASTRO_NOISE=gauss
+Ref-NoRV3    SOURCE_MODE=simulated  RV_MODE=none       SOLVER=dynesty ASTRO_NOISE=gauss

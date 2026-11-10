@@ -1,0 +1,4 @@
+# Octofitter cross-check of relative astrometry: simulated data from
+# crosscheck/export_relast_injection.py, fitted with Gaussian noise and jitter.
+XRA-short  SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=2309425390592896 RV_MODE=none SOLVER=emcee ASTRO_NOISE=gauss INJECT=600,0.3,0.2,60,40,100 INJECT_A0=0.560650202411781 INJECT_SEED=1 INJECT_SS=20,10,-5,0 RELAST_MODE=external RELAST_FILE=Results/crosscheck/relast_short_rel_astrometry.csv
+XRA-long  SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=2309425390592896 RV_MODE=none SOLVER=emcee ASTRO_NOISE=gauss INJECT=3000,0.4,0.55,120,130,250 INJECT_A0=1.6393511367846814 INJECT_SEED=2 INJECT_SS=20,10,-5,0 RELAST_MODE=external RELAST_FILE=Results/crosscheck/relast_long_rel_astrometry.csv

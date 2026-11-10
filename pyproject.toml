@@ -1,0 +1,46 @@
+# ExoPlanetLab is run from a clone of the repository (python3 epl.py ...): its
+# modules are plain files next to ExoPlanetLab.py and are not installed as a
+# package. This file gives the metadata, the dependencies and the test
+# settings;  pip install -e .  installs the dependencies only.
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exoplanetlab"
+version = "1.0.0"
+description = "Bayesian orbit fitting of Gaia epoch astrometry, alone or with radial velocities"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "GPL-3.0-or-later"}
+authors = [{name = "David Hobbs", email = "david.hobbs@fysik.lu.se"}]
+keywords = ["astrometry", "Gaia", "exoplanets", "orbit fitting", "Bayesian inference"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Topic :: Scientific/Engineering :: Astronomy",
+]
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "astropy>=6.0",
+    "matplotlib>=3.8",
+    "corner>=2.2",
+    "pandas>=2.0",
+    "emcee>=3.1",
+    "eryn>=1.2",
+]
+
+[project.optional-dependencies]
+# reading Gaia DR4 epoch astrometry (SOURCE_MODE = gaia_dr4_prerelease)
+gaia = ["gaiasupdate>=0.1.2", "astroquery>=0.4.7"]
+# the nested samplers (SOLVER = dynesty, nessai) and the flow proposals (rjflow)
+nested = ["dynesty>=2.1", "nessai>=0.13", "torch>=2.0"]
+test = ["pytest>=7"]
+all = ["exoplanetlab[gaia,nested,test]"]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

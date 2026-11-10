@@ -1,0 +1,12 @@
+# Robust screen in the full pipeline: normal runs (the number of
+# companions comes from the screen, SCREEN_ROBUST on by default with Student-t noise).
+# A. The three DR4 companions: the screen must still find one signal each.
+B15-Gaia-4          SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=1457486023639239296 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student SEED=501
+B15-Gaia-BH3        SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student SEED=502
+B15-HD-114762       SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=3937211745905473024 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student SEED=503
+# B. Two S = 8 injections of Tools/jobs_b2.txt that the Gaussian screen missed (seeds 11, 12),
+#    with the robust screen and, for comparison, the Gaussian one (SCREEN_ROBUST=0).
+B15-S8-s11-rob      SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4181040337841125632 RV_MODE=none SOLVER=emcee ORIENT_PRIOR=isotropic PT_ASTRO=1 ASTRO_NOISE=student INJECT_NOISE_NU=3 INJECT=500,0.3,0.4,60,30,90 INJECT_SNR=8 INJECT_SEED=11 SEED=504
+B15-S8-s12-rob      SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4181040337841125632 RV_MODE=none SOLVER=emcee ORIENT_PRIOR=isotropic PT_ASTRO=1 ASTRO_NOISE=student INJECT_NOISE_NU=3 INJECT=500,0.3,0.4,60,30,90 INJECT_SNR=8 INJECT_SEED=12 SEED=505
+B15-S8-s11-gau      SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4181040337841125632 RV_MODE=none SOLVER=emcee ORIENT_PRIOR=isotropic PT_ASTRO=1 ASTRO_NOISE=student INJECT_NOISE_NU=3 INJECT=500,0.3,0.4,60,30,90 INJECT_SNR=8 INJECT_SEED=11 SCREEN_ROBUST=0 SEED=506
+B15-S8-s12-gau      SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4181040337841125632 RV_MODE=none SOLVER=emcee ORIENT_PRIOR=isotropic PT_ASTRO=1 ASTRO_NOISE=student INJECT_NOISE_NU=3 INJECT=500,0.3,0.4,60,30,90 INJECT_SNR=8 INJECT_SEED=12 SCREEN_ROBUST=0 SEED=507

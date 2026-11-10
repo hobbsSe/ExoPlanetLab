@@ -1,0 +1,8 @@
+# Tests of the imaging jitter and of the flux ratio: data from
+# crosscheck/export_relast_injection.py short jitter lum. 'jitter' has quoted
+# imaging errors of 0.5 mas for true errors of 2 mas (missing jitter 1.94 mas);
+# 'lum' a companion of 0.3 Msun with flux ratio 0.05 (true M2 0.3, M1 1.0).
+XRJ-honest-jit  SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=2309425390592896 RV_MODE=none SOLVER=emcee ASTRO_NOISE=gauss INJECT=600,0.3,0.2,60,40,100 INJECT_A0=0.560650202411781 INJECT_SEED=1 INJECT_SS=20,10,-5,0 RELAST_MODE=external RELAST_FILE=Results/crosscheck/relast_short_rel_astrometry.csv
+XRJ-under-jit  SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=2309425390592896 RV_MODE=none SOLVER=emcee ASTRO_NOISE=gauss INJECT=600,0.3,0.2,60,40,100 INJECT_A0=0.560650202411781 INJECT_SEED=3 INJECT_SS=20,10,-5,0 RELAST_MODE=external RELAST_FILE=Results/crosscheck/relast_jitter_rel_astrometry.csv
+XRJ-under-nojit  SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=2309425390592896 RV_MODE=none SOLVER=emcee ASTRO_NOISE=gauss INJECT=600,0.3,0.2,60,40,100 INJECT_A0=0.560650202411781 INJECT_SEED=3 INJECT_SS=20,10,-5,0 RELAST_MODE=external RELAST_FILE=Results/crosscheck/relast_jitter_rel_astrometry.csv RELAST_JITTER=0
+XRJ-lum  SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=2309425390592896 RV_MODE=none SOLVER=emcee ASTRO_NOISE=gauss INJECT=600,0.3,0.2,60,40,100 INJECT_A0=5.565777245194089 INJECT_SEED=4 INJECT_SS=20,10,-5,0 RELAST_MODE=external RELAST_FILE=Results/crosscheck/relast_lum_rel_astrometry.csv RELAST_FLUX_RATIO=0.05

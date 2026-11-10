@@ -1,0 +1,14 @@
+# Checks of the evidence of Gaia BH3 + RV, N = 1:
+# compare with the tempered EVRV-Gaia-BH3-N1 (ln Z = 125.24, no trend).
+# RV trend (EXOPLANETLAB_RV_TREND=1), tempered fit: slope ~0, ln Z ~1 lower.
+EVRVT-Gaia-BH3-N1    SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=external SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1 RV_TREND=1
+# Nested-sampler evidence with RVs (dynesty, nessai): should reproduce 125.24.
+EVRVDY-Gaia-BH3-N1   SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=external SOLVER=dynesty ASTRO_NOISE=student EVIDENCE=1 N_FIT=1
+EVRVNS-Gaia-BH3-N1   SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=external SOLVER=nessai NESSAI_JOINT_USE_EMCEE=0 ASTRO_NOISE=student EVIDENCE=1 N_FIT=1
+# Repeats: are the differences between the nested and the tempered values with RVs
+# (dynesty 122.78 +/- 0.61, nessai 127.33 +/- 0.34, tempered 125.24) random scatter
+# or systematic?
+EVRVDY2-Gaia-BH3-N1  SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=external SOLVER=dynesty ASTRO_NOISE=student EVIDENCE=1 N_FIT=1
+EVRVNS2-Gaia-BH3-N1  SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=external SOLVER=nessai NESSAI_JOINT_USE_EMCEE=0 ASTRO_NOISE=student EVIDENCE=1 N_FIT=1
+EVRVNS3-Gaia-BH3-N1  SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=external SOLVER=nessai NESSAI_JOINT_USE_EMCEE=0 ASTRO_NOISE=student EVIDENCE=1 N_FIT=1
+EVRV2-Gaia-BH3-N1    SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=external SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1

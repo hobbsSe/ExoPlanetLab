@@ -1,0 +1,4 @@
+# Does an error factor per gate move the orbit of Gaia BH3?
+# The same settings as EV-Gaia-BH3-N1 (jobs_evidence_v2.txt), with the errors
+# scaled by the factors of Tools/noise_diagnostics.py (ungated rows x 1.81).
+EVG-Gaia-BH3-N1         SOURCE_MODE=gaia_dr4_prerelease SOURCE_ID=4318465066420528000 RV_MODE=none SOLVER=emcee ASTRO_NOISE=student EVIDENCE=1 N_FIT=1 PT_STORE_MAX_GB=5 ASTRO_GATE_F=0:1.81,9:0.94,10:0.86,11:0.94,12:1.03

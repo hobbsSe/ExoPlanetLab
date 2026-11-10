@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below. A paper describing it is in preparation."
+title: "ExoPlanetLab: Bayesian orbit fitting of Gaia epoch astrometry and radial velocities"
+type: software
+authors:
+  - family-names: Hobbs
+    given-names: David
+    email: david.hobbs@fysik.lu.se
+    affiliation: "Lund Observatory, Lund University"
+version: 1.0.0
+date-released: 2026-11-10
+license: GPL-3.0-or-later
+keywords:
+  - astrometry
+  - Gaia
+  - exoplanets
+  - orbit fitting
+  - Bayesian inference

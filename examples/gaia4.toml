@@ -1,0 +1,11 @@
+# Gaia-4: DR4 pre-release epoch astrometry with the published radial velocities.
+#   python3 epl.py examples/gaia4.toml
+# Names are the EXOPLANETLAB_* settings without the prefix (user guide,
+# "Environment-Variable Overrides"); list them with  python3 epl.py --list-settings
+source_mode = "gaia_dr4_prerelease"
+source_id   = 1457486023639239296
+rv_mode     = "external"        # RVdata/<source_id>/rv_data.csv
+solver      = "emcee"           # emcee | dynesty | nessai | rjmcmc | rjflow
+astro_noise = "student"         # Student-t noise per CCD measurement
+run_tag     = "Gaia-4"
+seed        = 1

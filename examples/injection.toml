@@ -1,0 +1,18 @@
+# A synthetic companion injected into the observing geometry of a quiet
+# pre-release source, with Student-t noise, fitted with one orbit.
+#   python3 epl.py examples/injection.toml
+source_mode     = "gaia_dr4_prerelease"
+source_id       = 4181040337841125632
+rv_mode         = "none"
+solver          = "emcee"
+orient_prior    = "isotropic"
+pt_astro        = true
+astro_noise     = "student"
+inject          = [500, 0.3, 0.4, 60, 30, 90]   # P [d], e, phase, i, Omega, omega [deg]
+inject_snr      = 10            # signal left after the single-star fit
+inject_seed     = 1
+inject_noise_nu = 3
+evidence        = true
+n_fit           = 1
+run_tag         = "EX-injection-N1"
+seed            = 3

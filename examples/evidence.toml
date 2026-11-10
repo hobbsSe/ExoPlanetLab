@@ -1,0 +1,14 @@
+# Gaia BH3, astrometry only: evidence of the one-companion model against none,
+# the acceleration models and the scan-angle models (tempered fit).
+#   python3 epl.py examples/evidence.toml
+# For the evidence ladder repeat with n_fit = 2 (--n-fit 2 --tag EX-Gaia-BH3-N2)
+# and collect with  python3 Tools/evidence_ladder.py EX
+source_mode = "gaia_dr4_prerelease"
+source_id   = 4318465066420528000
+rv_mode     = "none"
+solver      = "emcee"
+astro_noise = "student"
+evidence    = true
+n_fit       = 1
+run_tag     = "EX-Gaia-BH3-N1"
+seed        = 2
