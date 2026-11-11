@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below. A paper describing it is in preparation."
+message: "If you use this software, please cite it as below. Please also cite the paper (preferred-citation)."
 title: "ExoPlanetLab: Bayesian orbit fitting of Gaia epoch astrometry and radial velocities"
 type: software
 authors:
@@ -17,3 +17,16 @@ keywords:
   - exoplanets
   - orbit fitting
   - Bayesian inference
+preferred-citation:
+  type: article
+  title: "ExoPlanetLab: Bayesian orbit fitting of Gaia-DR4 epoch astrometry, radial velocities and relative astrometry"
+  authors:
+    - family-names: Hobbs
+      given-names: David
+      affiliation: "Lund Observatory, Lund University"
+  year: 2026
+  identifiers:
+    - type: other
+      value: "arXiv:2611.13770"
+  url: "https://arxiv.org/abs/2611.13770"
+  repository-code: "https://github.com/hobbsSe/ExoPlanetLab"

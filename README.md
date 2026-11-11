@@ -11,7 +11,8 @@ astrometry and validated on the DR4 pre-release sources.
 
 **Version 1.0.0**, archived at Zenodo:
 [doi:10.5281/zenodo.24101622](https://doi.org/10.5281/zenodo.24101622).
-A paper describing the code is in preparation.
+The paper describing the code is
+[arXiv:2611.13770](https://arxiv.org/abs/2611.13770).
 
 ## What it does
 
@@ -180,7 +181,9 @@ troubleshooting and the limitations of the code.
 Cite the archived version you used: version 1.0.0 is
 [doi:10.5281/zenodo.24101622](https://doi.org/10.5281/zenodo.24101622), and
 [doi:10.5281/zenodo.24101621](https://doi.org/10.5281/zenodo.24101621) always
-resolves to the latest version. `CITATION.cff` gives the full entry.
+resolves to the latest version. The paper is
+Hobbs (2026), [arXiv:2611.13770](https://arxiv.org/abs/2611.13770).
+`CITATION.cff` gives both entries.
 Please also cite the samplers you use (emcee, eryn, dynesty, nessai) and, for
 Gaia data, follow the Gaia acknowledgement instructions.
 
